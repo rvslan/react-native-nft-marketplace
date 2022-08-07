@@ -5,7 +5,7 @@ import { EthPrice, NFTTitle } from './SubInfo';
 import { COLORS, SIZES, FONTS } from '../constants';
 
 const DetailsDesc = ({ data }) => {
-  const [text, setText] = useState(data.description.slice(0, 100));
+  const [text, setText] = useState(data.shortDescription);
   const [readMore, setReadMore] = useState(false);
 
   return (
@@ -64,7 +64,7 @@ const DetailsDesc = ({ data }) => {
                   setText(data.description);
                   setReadMore(true);
                 } else {
-                  setText(data.description.slice(0, 100));
+                  setText(data.shortDescription);
                   setReadMore(false);
                 }
               }}

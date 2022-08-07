@@ -80,7 +80,12 @@ const Details = ({ route, navigation }) => {
             <DetailsHeader data={data} navigation={navigation} />
             <SubInfo />
             <View style={{ padding: SIZES.font }}>
-              <DetailsDesc data={data} />
+              <DetailsDesc
+                data={{
+                  ...data,
+                  shortDescription: data.description.slice(0, 100),
+                }}
+              />
 
               {data.bids.length > 0 && (
                 <Text
